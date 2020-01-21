@@ -118,7 +118,7 @@ $R^2=1-\frac{\sum_{i=1}^{n}e_i^2}{\sum_{i=1}^{n}(y_i-\bar{y})^2}$
 
 The characteristics of the given problem are:
 
-- __Regression:__ The target variable is a continuous numerical variables 
+- __Regression:__ The target variable is a continuous numerical variable.
 - __Small dataset:__ Less than 100K samples.
 - __Few features should be important:__ The correlation matrix indicates that a few features contain the information to predict the target variable.
 
@@ -160,6 +160,7 @@ The performance of these models in the following:
 
 ### Feature importance
 
+```
 Feature ranking:
     1. feature hr (0.599712)
     2. feature temp (0.177191)
@@ -172,7 +173,7 @@ Feature ranking:
     9. feature season (0.009541)
     10. feature holiday (0.003305)
     
-
+```
 __Interpretation:__ The result corresponds to the high correlation of the hour and temperature variable with the bicycle sharing count in the feature correlation matrix.
 
 
