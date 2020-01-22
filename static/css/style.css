@@ -1,0 +1,25 @@
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+} 
+.transparent {
+  background-color:#a2cae2   !important;
+}
+.text-muted-footer {
+  /* Positioning */
+  margin-top: 15px;
+
+  /* Typography */
+  color: #fff;
+}
+
+.two-toned-footer-color {
+  /* Box-model */
+  height: 6px;
+  padding-top: 3px;
+
+  /* Visual */
+  background-color: #29a854;
+}

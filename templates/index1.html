@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bike Sharing - Predictive Analytics</title>
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.3/flatpickr.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css">
+
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron jumbotron-fluid text-center transparent">
+        <h1>Bike Sharing - Predictive Analytics</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="card transparent">
+          <h5 class="card-header">Select Date:</h5>
+          <input class="form-control" id="datetime" type="text" placeholder="1/1/2010">
+          <button id="predict-btn" type="submit" class="btn btn-primary">Predict</button>
+          <button id="clear-btn" type="reset" class="btn btn-outline-danger">Clear</button>       
+         </div>
+      </div>
+      <div class="col-md-5">
+          <div class="card transparent">
+              <h5 class="card-header">Bike Utilization</h5>
+              <div class="card-body">
+                  <div id="gauge"></div>
+                </div>
+            </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card transparent text-white">
+            <h5 class="card-header">Region Map</h5>
+          <div class="card-body">
+            <div id="heatmap"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer navbar-fixed-bottom transparent">
+    <div class="two-toned-footer-color"></div>
+    <p class="text-muted text-muted-footer text-center">
+      &copy; Copyright Indira V. Poovambur 2019
+    </p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="{{ url_for('static', filename='js/guage.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  <script src= "https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.3/flatpickr.js"></script>
+
+  <script>
+      const fp  = flatpickr("#datetime", { 
+                              dateFormat: "m/d/Y",
+                              allowInput: true
+                            });
+  </script>
+</body>
+
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>bike sharing</title>
+  <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+  <link rel="shortcut icon" href="../Images/citi-bike-station-bikes.jpg">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../static/css/style.css">
+    
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-custom navbar-expand-sm navbar-dark bg-primary">
+      <a class="navbar-brand" href="/"><img src="../Images/citi-bike-station-bikes.jpg" style="height:30px"></img></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+  </nav>
+  <!-- Main container for page content -->
+  <div class="container" id="container-wide">
+    <div class="row">
+      <!-- Div for logo -->
+      <div class="col-md-12 text-center pt-4 mb-3">
+        <img src="../Images/citi-bike-station-bikes.jpg" id="logo"></img>
+        <hr class="my-4">
+      </div>
+    </div>
+    <div class="row">
+      <!-- Column for inputs -->
+      <div class="col-md-3">
+        <div class="panel-body">
+          <form>
+            <div class="form-group">
+              <ul class="list-group" id="inputs">
+                <li class="list-group-item">
+                  <label for="tip">Show Date</label>
+                  <input class="form-control" id="datepicker" type="text" autocomplete="off" readonly="readonly">
+                  <br />
+                  <!-- Predict and Clear buttons -->
+                  <button id="predict-btn" type="submit" class="btn btn-primary">Predict!</button>
+                  <button id="clear-btn" type="reset" class="btn btn-outline-danger">Clear</button>
+                </li>
+              </ul>
+            </div>
+            <div class="form-group mt-3" id="band-metadata">
+              <!-- Populate band metadata here -->
+            </div>
+            <div class="form-group-mt-3 bottom-margin" id="room-selection">
+              <!-- Populate room selection here -->
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- div for ticket sales -->
+      <div class="col-md-4">
+        <div id="bike" class="pt-2">
+          <h5 style="text-align:center">Expected Bike Utilization</h5>
+          <div id="total-ticket-sales" class="gauge mt-3" style="width:75%; margin:auto;"></div>
+          <hr class="mt-1">
+          <!-- new row for ticket sales subtotal gages -->
+          <hr class="mt-3">
+
+          <div class="row">
+            <div class="col-md-12" style="text-align:center">
+              <span>Ticket Price</span>
+              <a tabindex="0" id="popover" data-html="true" data-toggle="popover" data-trigger="focus" 
+              data-content="Warning: The model will suggest a ticket price based on historical data. Changing this price will recalculate revenue, 
+              but be aware that attendance may also be affected by altering the ticket price."></a>
+              <img src="../static/images/info.png" id="tooltip" style="height: .7rem; width: .7rem; vertical-align:inherit; opacity:0.9;"></a>
+
+              <div id="price-slider" style="margin:auto" class="mt-1 mb-0">
+                <!-- Insert slider for ticket price here -->
+              </div>
+              <!-- Div for price display -->
+              <div class="mt-1" id="bottom-margin">
+                <span id="price">
+                    <!-- Price value -->
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- div for utilization -->
+      <div class="col-md-4">
+        <div id="count" class="pt-2">
+          <h5 style="text-align:center">Expected Total Revenue</h5>
+          <div id="total-revenue" class="gauge mt-3" style="width:75%; margin:auto;"></div>
+          <hr class="mt-1">
+          <!-- new row for revenue subtotal gages -->
+          <div class="row">
+            <!-- div for ticket revenue gage -->
+            <div class="col-6" style="text-align:center">
+              <span >Ticket Revenue</span>
+              <div id="ticket-revenue" class="gauge mt-2" style="width:85%; margin:auto;"></div>
+            </div>
+            <!-- div for bar revenue gage -->
+            <div class="col-6" style="text-align:center">
+              <span style="text-align:center">Bar Revenue</span>
+              <div id="bar-revenue" class="gauge mt-2" style="width:85%; margin:auto;"></div>
+            </div>
+          </div>
+          <hr class="mt-3">
+       
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../static/js/app.js"></script>
+</body>
+
+</html>

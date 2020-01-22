@@ -42,7 +42,6 @@ Both hour.csv and day.csv have the following fields, except hr which is not avai
 - instant: record index
 - dteday : date
 - season : season (1:spring, 2:summer, 3:fall, 4:winter)
-- yr : year (0: 2011, 1:2012)
 - mnth : month ( 1 to 12)
 - hr : hour (0 to 23)
 - holiday : weather day is holiday or not 
@@ -66,8 +65,23 @@ Both hour.csv and day.csv have the following fields, except hr which is not avai
 
 ## Descriptive Analysis
 
-Provide data set splits for training, validation, and testing:
+In this stage, split dataset for training, validation, and testing.
+Identified the category and numeric features.
 
+```
+from sklearn.model_selection import train_test_split
+
+train, test = train_test_split(fullData, test_size=0.2,train_size=0.8, random_state=42)
+
+train, validate =  train_test_split(train, test_size=0.2,train_size=0.8, random_state=42)
+
+category_features = ['season', 'holiday', 'mnth', 'hr', 'weekday', 'workingday', 'weathersit']
+number_features = ['temp', 'atemp', 'hum', 'windspeed']
+
+features= category_features + number_features
+target = ['cnt']
+
+```python
 
 ## Missing Value Analysis
 
@@ -76,6 +90,14 @@ Check any NULL values in data:
 ## Outlier Analysis
 
 ### Box plots
+
+Box plots were plotted for count of bikes rented across multiple features.
+
+![count](Images/count_plot.png)
+![mounthlycount](Images/monthly_count.png)
+![weathersit](Images/weathersit_count_plot.png)
+![workingday](Images/workingday_count_plot.png)
+![hourofday](Images/hourofday_count_plot.png)
 
 
 __Interpretation:__ The working day and holiday box plots indicate that more bicycles are rent during normal working days than on weekends or holidays. 
@@ -90,6 +112,8 @@ The distribution plot of the count values reveals that the count values do not m
 
 
 ## Correlation Analysis
+
+![heatmap](Images/heatmap.png)
 
 
 __Conclusion:__ At the end of the descriptive analysis chapter, we can note the following points:
@@ -160,20 +184,8 @@ The performance of these models in the following:
 
 ### Feature importance
 
-```
-Feature ranking:
-    1. feature hr (0.599712)
-    2. feature temp (0.177191)
-    3. feature hum (0.062913)
-    4. feature workingday (0.045378)
-    5. feature windspeed (0.033074)
-    6. feature mnth (0.025497)
-    7. feature weathersit (0.022410)
-    8. feature weekday (0.020978)
-    9. feature season (0.009541)
-    10. feature holiday (0.003305)
-    
-```
+![featureimp](Images/featureimp.png)
+
 __Interpretation:__ The result corresponds to the high correlation of the hour and temperature variable with the bicycle sharing count in the feature correlation matrix.
 
 
