@@ -15,7 +15,7 @@ This notebook documents the analysis and model development for the Bike Sharing 
 - Model Selection
     - Ridge Regession
     - Support Vector Regression
-    - Essemble Regressor
+    - Ensemble Regressor
     - Random Forest Regressor
 - Random Forest
     - Random Forest Model
@@ -60,7 +60,8 @@ Both hour.csv and day.csv have the following fields, except hr which is not avai
 - registered: count of registered users
 - cnt: count of total rental bikes including both casual and registered
 
-## Setup
+## Technology Stack
+ Python, Pandas, MatplotLib, Leaflet.js, Web API,  Flask, Angular 8, Hammer.js, Angular Material
 
 
 ## Descriptive Analysis
@@ -93,7 +94,7 @@ Check any NULL values in data:
 Box plots were plotted for count of bikes rented across multiple features.
 
 ![count](Images/count_plot.png)
-![mounthlycount](Images/monthly_count.png)
+![mounthlycount](Images/monthly_count_plot.png)
 ![weathersit](Images/weathersit_count_plot.png)
 ![workingday](Images/workingday_count_plot.png)
 ![hourofday](Images/hourofday_count_plot.png)
@@ -156,10 +157,8 @@ The performance of these models in the following:
     |         Lasso         |      35295.76      |   0.14   |
     |       ElasticNet      |      35555.92      |   0.13   |
     |         Ridge         |      35297.38      |   0.14   |
-    |          SVR          |      40015.04      |   0.02   |
     |          SVR          |      30071.93      |   0.26   |
     |    BaggingRegressor   |      13068.24      |   0.68   |
-    |    BaggingRegressor   |      34869.47      |   0.15   |
     |         NuSVR         |      28777.35      |   0.30   |
     | RandomForestRegressor |      12686.57      |   0.69   |
     +-----------------------+--------------------+----------+
@@ -188,4 +187,19 @@ The performance of these models in the following:
 __Interpretation:__ The result corresponds to the high correlation of the hour and temperature variable with the bicycle sharing count in the feature correlation matrix.
 
 
+
+## Conclusion
+This is a work in progress, the outstanding items are :
+	
+*ETL module where:
+	1. Add geography information to the dataset.
+	2. I have rewritten the temperature normalization in Fahrenheit instead of the current 	  	Centigrade scale.
+
+* Deployed and functioning website
+
+* Heat Maps by region using Leaflet.js
+
+* Use TensorFlow regression models and compare their score.
+
+# I WILL BE BACK FOR THE JULY 2020 DEMO DAY!!
 
