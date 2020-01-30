@@ -189,17 +189,26 @@ __Interpretation:__ The result corresponds to the high correlation of the hour a
 
 
 ## Conclusion
-This is a work in progress, the outstanding items are :
+__Regression:__
+	Predication of bike rental count hourly or daily based on the environmental and seasonal settings.
 	
-*ETL module where:
-	1. Add geography information to the dataset.
-	2. I have rewritten the temperature normalization in Fahrenheit instead of the current 	  	Centigrade scale.
+__Event and Anomaly Detection__:  
+		Count of rented bikes are also correlated to some events in the town which easily are traceable via search engines.
+		For instance, query like "2012-10-30 washington d.c." in Google returns related results to Hurricane Sandy.Therefore the data can be used for validation of anomaly or event detection algorithms as well.
 
-* Deployed and functioning website
+This is a work in progress, the outstanding items are :
+* ETL module where:
+	1. I have added geographic(latitude and longitude) information to the dataset.
+	2. I have rewritten the temperature normalization in Fahrenheit instead of the current 	  	           Centigrade scale.
 
-* Heat Maps by region using Leaflet.js
+* Deployed and functioning application.
+
+* Heat Maps by region using Leaflet.js.
 
 * Use TensorFlow regression models and compare their score.
 
+* Further use the dataset for event and anomaly detection models.
+
 # I WILL BE BACK FOR THE JULY 2020 DEMO DAY!!
+
 
