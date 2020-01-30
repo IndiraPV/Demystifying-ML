@@ -68,7 +68,7 @@ Both hour.csv and day.csv have the following fields, except hr which is not avai
 In this stage, split dataset for training, validation, and testing.
 Identified the category and numeric features.
 
-```
+```python
 from sklearn.model_selection import train_test_split
 
 train, test = train_test_split(fullData, test_size=0.2,train_size=0.8, random_state=42)
@@ -80,8 +80,7 @@ number_features = ['temp', 'atemp', 'hum', 'windspeed']
 
 features= category_features + number_features
 target = ['cnt']
-
-```python
+```
 
 ## Missing Value Analysis
 
